@@ -1,0 +1,164 @@
+.animal-list {
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .header h2 {
+    margin: 0;
+  }
+  
+  .header button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .header button:hover {
+    background-color: #0056b3;
+  }
+  
+  .table-container {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+  }
+  
+  .table button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .table button:first-child {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .table button:last-child {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content-cadastro {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+  }
+  
+  .modal-content-cadastro label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .input-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .modal-content-cadastro input,
+  .modal-content-cadastro select,
+  .modal-content-cadastro textarea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
+  
+  @media (min-width: 768px) {
+  
+    .modal-content-cadastro label {
+      margin-bottom: 5px;
+    }
+  
+    .modal-content-cadastro input,
+    .modal-content-cadastro select,
+    .modal-content-cadastro textarea {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .modal-content-cadastro {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+    }
+    .input-container{
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .modal-actions button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-actions button:first-child {
+    background-color: #25aba7;
+  }
+  
+  .modal-actions button:last-child {
+    background-color: #FFB900; 
+  }
+  
+  .modal-actions button:hover {
+    opacity: 0.8; 
+  }
+  
