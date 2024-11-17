@@ -1,0 +1,129 @@
+.div-blue-box {
+  height: 25px;
+  background-color: #25aba7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+}
+
+.painel-button {
+  font-size: 13px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo-container img {
+  cursor: pointer;
+}
+.main-container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.menu-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+}
+
+.menu-toggle.open .menu-bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open .menu-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .menu-bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu-list-header {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-list-header ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 12px;
+  align-items: center;
+}
+
+.menu-list-header ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-list-header ul li:hover {
+  transform: scale(1.03);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.colabore-item {
+  background-color: #ffb900;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-list-header {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    display: none;
+    z-index: 1000;
+  }
+
+  .menu-list-header.active {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .menu-list-header ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .menu-list-header a {
+    font-size: 20px;
+  }
+
+  .logo-container img {
+    width: 70px;
+  }
+
+  .main-container-header {
+    height: 100px;
+  }
+}

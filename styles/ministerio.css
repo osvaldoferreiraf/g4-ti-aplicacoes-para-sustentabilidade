@@ -1,0 +1,76 @@
+.ministerio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  padding: 100px 0;
+}
+.ministerio-logo-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.ministerio-img {
+  width: 133px;
+  height: 145px;
+}
+.ministerio-title {
+  font-size: 50px;
+  font-weight: 600;
+}
+.ministerio-subtitle {
+  font-size: 20px;
+  color: #25aba7;
+  font-weight: 600;
+}
+.ministerio-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ministerio-info-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: #25aba7;
+}
+.ministerio-info-div {
+  max-width: 670px;
+  padding: 20px;
+  background-color: #f6f6f6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+.ministerio-info-text {
+  font-size: 17px;
+}
+
+@media screen and (max-width: 768px) {
+  .ministerio-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px 0;
+  }
+  .ministerio-logo-title {
+    gap: 0px;
+  }
+  .ministerio-img {
+    width: 80px;
+    height: 100px;
+  }
+  .ministerio-title {
+    font-size: 30px;
+  }
+  .ministerio-subtitle {
+    font-size: 15px;
+  }
+  .ministerio-info-container {
+    padding: 30px;
+  }
+  .ministerio-info-title {
+    font-size: 15px;
+  }
+  .ministerio-info-text {
+    font-size: 13px;
+  }
+}
