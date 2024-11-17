@@ -1,0 +1,125 @@
+.animais-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 80px;
+}
+.title-inputs-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.title-img-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.animais-title {
+  font-size: 40px;
+  font-weight: 600;
+}
+.input-text-animais {
+  width: 300px;
+  padding: 2px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.selects-animais-div {
+  display: flex;
+  gap: 8px;
+}
+
+.animaislist-div {
+  padding: 50px 0px;
+}
+.animais-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.animal-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  transition: transform 0.2s ease, font-size 0.2s ease;
+}
+.animal-card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+.animal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px 12px 1px 0px;
+}
+.animal-name-button-div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  gap: 20px;
+}
+.animal-name {
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0px 15px;
+}
+.animal-marca-azul {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.animal-ver-mais {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+}
+.animal-ver-text {
+  padding: 0px 15px 10px 0px;
+  font-size: 15px;
+  color: white;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .animais-container {
+    padding: 0px 20px;
+  }
+  .title-inputs-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .animais-title {
+    font-size: 30px;
+  }
+  .input-text-animais {
+    width: 200px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  .select-input-container {
+    margin-top: 5px;
+    width: 110px;
+  }
+
+  .animaislist-div {
+    padding: 30px 0px;
+  }
+
+  .animais-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .animal-ver-text {
+    font-size: 14px;
+  }
+}

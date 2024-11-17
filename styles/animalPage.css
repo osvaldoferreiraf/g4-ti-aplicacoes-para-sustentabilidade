@@ -1,0 +1,186 @@
+.animal-page {
+  width: 100%;
+  padding: 0px 60px 60px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.animal-first-card-conteiner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 35px 60px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  background-color: #fafafa;
+  width: 80%;
+}
+.animal-page-image-div {
+}
+.animal-page-image {
+  border-radius: 12px;
+}
+.animal-details-conteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.animal-name-icon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.animal-details-icon {
+  width: 80px;
+}
+.animal-page-name {
+  font-size: 40px;
+  font-weight: 600;
+}
+.animal-age-porte-raca {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.animal-details-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.animal-details-component-info {
+  font-size: 20px;
+  color: #989898;
+}
+.animal-details-component-dinamic {
+  font-size: 25px;
+}
+.animal-historic {
+  display: flex;
+  flex-direction: column;
+  padding: 35px 60px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  background-color: #fafafa;
+  width: 80%;
+}
+.animal-historic-title {
+  font-size: 25px;
+  font-weight: 600;
+}
+.animal-text {
+  font-size: 15px;
+}
+.animal-adote-button-div {
+  width: 80%;
+}
+.animal-adote-button {
+  display: flex;
+  width: 100%;
+  background-color: #25aba7;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 12px;
+  gap: 10px;
+  cursor: pointer;
+}
+.animal-adote-button-text {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+}
+.animal-adote-button-icon {
+}
+.animal-adote-whatsapp {
+  width: 35px;
+}
+
+@media screen and (max-width: 768px) {
+  .animal-page {
+    padding: 0px 20px 20px 20px;
+    gap: 15px;
+  }
+
+  .animal-first-card-conteiner {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .animal-page-image-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .animal-page-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .animal-details-conteiner {
+    align-items: center;
+    padding: 0;
+  }
+
+  .animal-name-icon {
+    gap: 10px;
+    text-align: center;
+  }
+
+  .animal-page-name {
+    font-size: 28px;
+  }
+
+  .animal-details-icon {
+    width: 50px;
+    height: 80px;
+  }
+  .animal-age-porte-raca {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+  }
+
+  .animal-details-component-info {
+    font-size: 14px;
+  }
+
+  .animal-details-component-dinamic {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .animal-historic {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .animal-historic-title {
+    font-size: 20px;
+  }
+
+  .animal-text {
+    font-size: 14px;
+  }
+
+  .animal-adote-button-div {
+    width: 100%;
+  }
+
+  .animal-adote-button {
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .animal-adote-button-text {
+    font-size: 20px;
+  }
+
+  .animal-adote-whatsapp {
+    width: 25px;
+  }
+}
