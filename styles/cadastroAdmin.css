@@ -1,0 +1,111 @@
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+  .btn-submit {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 15px;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-close {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .btn-close:hover {
+    background-color: #e41f0b;
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .form-input:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  .form-input:invalid {
+    border-color: #f44336;
+  }
+
+  .admins-table th{
+    width: 100px;
+  }
+  .admins-table td{
+    text-align: center;
+  }
+
+  .admins-table td button{
+    background-color: rgb(168, 0, 0);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  
