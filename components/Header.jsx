@@ -13,7 +13,7 @@ export default function Header() {
   const toggleMenu = () => {
     const newMenuState = !menuOpen;
     setMenuOpen(newMenuState);
-    document.body.style.overflow = newMenuState ? "hidden" : "auto";
+    
   };
   
 
