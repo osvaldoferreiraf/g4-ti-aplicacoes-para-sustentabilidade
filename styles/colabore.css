@@ -1,0 +1,59 @@
+.colabore-container{
+    margin: 10px 80px;
+}
+hr{
+    margin: 30px 0px;
+}
+.bank-details {
+    font-family: Arial, sans-serif;
+    color: #333; 
+    line-height: 1.6; 
+  }
+  
+  .bank-details p {
+    margin: 8px 0; 
+  }
+  
+  .bank-details h3 {
+    margin-top: 16px; 
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .bank-info {
+    margin-bottom: 16px;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+
+  .forms-button{
+    border: none;
+    border-radius: 8px;
+    background-color: #25aba7;
+    color: white;
+    padding: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .forms-button:hover{
+    transform: scale(1.03);
+  }
+
+  p{
+    text-align: justify;
+    font-size: 15px;
+  }
+
+  @media screen and (max-width:768px){
+    .colabore-container{
+      margin: 10px 20px;
+  }
+  }
+
+  .outras-formas{
+    margin-bottom: 50px;
+  }
+  
