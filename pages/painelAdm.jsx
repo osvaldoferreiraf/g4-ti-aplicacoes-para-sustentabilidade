@@ -2,10 +2,7 @@ import AnimalList from "@/components/AnimalList";
 import React, { useEffect, useState } from "react";
 import RegistrarAdmin from "../components/registrarAdmin";
 import { useRouter } from "next/router";
-
-function FormComponent() {
-  return <div>Formulário</div>;
-}
+import FormComponent from "../components/FormComponent";
 
 export default function PainelAdm() {
   const router = useRouter();
@@ -59,7 +56,7 @@ export default function PainelAdm() {
           <li onClick={() => setSelectedComponent("registerAdmin")}>
             Cadastrar Admin
           </li>
-          <li onClick={() => setSelectedComponent("form")}>Formulário</li>
+          <li onClick={() => setSelectedComponent("form")}>Formulários</li>
           <li onClick={handleLogout}>Sair</li>
         </ul>
       </aside>

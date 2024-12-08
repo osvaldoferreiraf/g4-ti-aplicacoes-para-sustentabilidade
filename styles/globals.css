@@ -161,3 +161,38 @@ body {
   width: 70px;
   height: 70px;
 }
+
+
+.select-input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.select-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.select-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #888;
+  margin-left: -30px;
+  margin-right: 5px;
+}
+
+.clear-button:hover {
+  color: #000;
+}

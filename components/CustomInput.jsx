@@ -1,47 +1,50 @@
 import { useState } from "react";
 
-const SimpleSelectInput = ({ options, placeholder }) => {
-  const [inputValue, setInputValue] = useState("");
+const SimpleSelectInput = ({ options, placeholder, value, onChange, onClear }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleSelect = (option) => {
-    setInputValue(option);
+    onChange(option);
     setIsDropdownOpen(false);
   };
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
   const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen((prev) => !prev);
   };
 
   return (
     <div className="select-input-container">
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        onClick={toggleDropdown}
-        placeholder={placeholder || "Selecione ou digite..."}
-        className="select-input"
-      />
+      <div className="select-input-wrapper">
+        <input
+          type="text"
+          value={value}
+          onClick={toggleDropdown}
+          placeholder={placeholder || "Selecione..."}
+          className="select-input"
+          readOnly
+        />
+        {value && (
+          <button
+            type="button"
+            className="clear-button"
+            onClick={onClear}
+            aria-label="Limpar filtro"
+          >
+            ✕
+          </button>
+        )}
+      </div>
       {isDropdownOpen && (
         <div className="dropdown-options">
-          {options
-            .filter((option) =>
-              option.toLowerCase().includes(inputValue.toLowerCase())
-            )
-            .map((option, index) => (
-              <div
-                key={index}
-                className="dropdown-option"
-                onClick={() => handleSelect(option)}
-              >
-                {option}
-              </div>
-            ))}
+          {options.map((option, index) => (
+            <div
+              key={index}
+              className="dropdown-option"
+              onClick={() => handleSelect(option)}
+            >
+              {option || "Todos"}
+            </div>
+          ))}
         </div>
       )}
     </div>

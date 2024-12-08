@@ -34,5 +34,5 @@ export default async function handle(req, res) {
     });
   }
 
-  return res.status(405).json({ message: "Método não permitido" });
+  return res.status(405).json({ message: "Método não permitido" });
 }

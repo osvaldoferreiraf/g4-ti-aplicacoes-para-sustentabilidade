@@ -14,6 +14,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-right: 10px;
 }
 .animais-title {
   font-size: 40px;
@@ -21,13 +22,15 @@
 }
 .input-text-animais {
   width: 300px;
-  padding: 2px 10px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  margin-right: 8px;
 }
 .selects-animais-div {
   display: flex;
+  align-items: flex-end;
   gap: 8px;
 }
 
@@ -101,13 +104,19 @@
     font-size: 30px;
   }
   .input-text-animais {
-    width: 200px;
-    padding: 5px 10px;
+    padding: 10px 10px;
     font-size: 12px;
+    width: 100%;
   }
   .select-input-container {
     margin-top: 5px;
-    width: 110px;
+    width: 100%;
+  }
+
+  .selects-animais-div{
+    flex-direction: column;
+    width: 100%;
+    align-items: normal;
   }
 
   .animaislist-div {
@@ -122,4 +131,9 @@
   .animal-ver-text {
     font-size: 14px;
   }
+}
+
+.select-wrapper label{
+  font-size: 15px;
+  display: flex;
 }

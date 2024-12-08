@@ -51,11 +51,11 @@ export default async function handle(req, res) {
         .json({ message: "Administrador deletado com sucesso!" });
     }
 
-    return res.status(405).json({ message: `Método ${method} não permitido`});
+    return res.status(405).json({ message: `Método ${method} não permitido` });
   } catch (error) {
     console.error("Erro no servidor:", error);
     return res
       .status(500)
-      .json({ message: "Erro no servidor", error: error.message });
-  }
+      .json({ message: "Erro no servidor", error: error.message });
+  }
 }

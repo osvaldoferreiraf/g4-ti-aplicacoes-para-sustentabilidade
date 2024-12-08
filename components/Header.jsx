@@ -112,11 +112,6 @@ export default function Header() {
                 Vídeos
               </Link>
             </li>
-            <li>
-              <Link href="/contato" onClick={handlePageLinkClick}>
-                Contato
-              </Link>
-            </li>
             <li className="colabore-item">
               <Link href="/colabore" onClick={handlePageLinkClick}>
                 Colabore

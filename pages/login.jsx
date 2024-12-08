@@ -3,14 +3,14 @@ import React, { useState, useEffect } from "react";
 import LogoAmarela from "../public/assets/img/logoAmarela.svg";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
   const router = useRouter();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-
 
   useEffect(() => {
     const isLoggedAdmin = localStorage.getItem("isLoggedAdmin");
@@ -25,7 +25,7 @@ export default function Login() {
 
   const handleValidateLogin = async () => {
     if (!email || !password) {
-      setErrorMessage("Por favor, preencha todos os campos.");
+      toast.error("Por favor, preencha todos os campos.");
       return;
     }
 
@@ -37,22 +37,23 @@ export default function Login() {
       localStorage.setItem("userEmail", userEmail);
       localStorage.setItem("isLoggedAdmin", isLoggedAdmin.toString());
 
-      router.push("/painelAdm");
+      toast.success("Login realizado com sucesso!");
+      setTimeout(() => router.push("/painelAdm"), 2000);
     } catch (error) {
       const errorMessage =
         error.response?.data?.message ||
         "Erro de conexão. Tente novamente mais tarde.";
-      setErrorMessage(errorMessage);
+      toast.error(errorMessage);
     }
   };
 
   const handleInputChange = (setter) => (e) => {
     setter(e.target.value);
-    setErrorMessage("");
   };
 
   return (
     <div className="login-page">
+      <ToastContainer position="top-right" autoClose={3000} />
       <div className="login-conteiner">
         <Image
           className="login-image"
@@ -61,7 +62,6 @@ export default function Login() {
           onClick={() => router.push("/")}
         />
         <span className="login-text">REALIZE SEU LOGIN DE ADMINISTRADOR</span>
-        {errorMessage && <div className="error-message">{errorMessage}</div>}
         <div className="login-inputs">
           <input
             className="select-input"
@@ -83,7 +83,7 @@ export default function Login() {
               onClick={togglePasswordVisibility}
               className="eye-button"
             >
-              {passwordVisible ? "🙈" : "👁"}
+              {passwordVisible ? "🙈" : "👁️"}
             </button>
           </div>
           <button onClick={handleValidateLogin} className="login-button">
@@ -91,6 +91,6 @@ export default function Login() {
           </button>
         </div>
       </div>
-    </div>
-  );
+    </div>
+  );
 }

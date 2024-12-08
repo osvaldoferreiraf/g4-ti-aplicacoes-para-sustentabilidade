@@ -8,7 +8,7 @@ import { Animal } from "../../models/Animal";
 export default function AnimalPage({ animal, error }) {
   if (error) return <div>{error}</div>;
   function handleWhatsappClick(animal) {
-    const phoneNumber = "+5599999999999";
+    const phoneNumber = "+5531995836534";
     const message = `Olá, estou interessado em adotar o animal ${animal?.nome}. Poderia me dar mais informações?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message

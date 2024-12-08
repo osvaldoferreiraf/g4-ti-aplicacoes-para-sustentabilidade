@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RegisterAdmin = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,8 +13,22 @@ const RegisterAdmin = () => {
   });
 
   const [admins, setAdmins] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  
+  const fetchAdmins = async () => {
+    try {
+      const response = await axios.get("/api/users");
+      setAdmins(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar administradores:", error);
+      toast.error(
+        error.response ? error.response.data.message : "Erro desconhecido"
+      );
+    }
+  };
+  
+  useEffect(() => {
+    fetchAdmins();
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +39,7 @@ const RegisterAdmin = () => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      setErrorMessage("As senhas não coincidem");
+      toast.error("As senhas não coincidem");
       return;
     }
 
@@ -34,62 +50,47 @@ const RegisterAdmin = () => {
         password: formData.password,
       });
 
-      setSuccessMessage(response.data.message);
-      setErrorMessage("");
+      const newAdmin = response.data;
+
+      setAdmins((prevAdmins) => [...prevAdmins, newAdmin]);
+
       setFormData({
         name: "",
         email: "",
         password: "",
         confirmPassword: "",
       });
+
+      setIsModalOpen(false)
+      fetchAdmins()
+      toast.success("Administrador cadastrado com sucesso!");
     } catch (error) {
-      setErrorMessage(
+      toast.error(
         error.response ? error.response.data.message : "Erro ao cadastrar"
       );
-      setSuccessMessage("");
     }
   };
-
-  useEffect(() => {
-    const fetchAdmins = async () => {
-      try {
-        const response = await axios.get("/api/users");
-        setAdmins(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar administradores:", error);
-        alert(
-          `Erro: ${
-            error.response ? error.response.data.message : "Erro desconhecido"
-          }`
-        );
-      }
-    };
-    fetchAdmins();
-  }, []);
 
   const handleDelete = (id) => {
     axios
       .delete(`/api/users?id=${id}`)
       .then(() => {
         setAdmins(admins.filter((admin) => admin._id !== id));
-        setSuccessMessage("Administrador deletado com sucesso!");
+        toast.success("Administrador deletado com sucesso!");
       })
       .catch(() => {
-        setErrorMessage("Erro ao deletar administrador");
+        toast.error("Erro ao deletar administrador");
       });
   };
 
   return (
     <div>
-      <h2 className="title">Administradores</h2>
-      <button className="btn" onClick={() => setIsModalOpen(true)}>
-        Cadastrar Novo Admin
-      </button>
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
-      {successMessage && (
-        <div className="success-message">{successMessage}</div>
-      )}
-
+      <div className="admin-register-div">
+        <h2 className="title">Administradores</h2>
+        <button className="btn" onClick={() => setIsModalOpen(true)}>
+          Cadastrar Novo Admin
+        </button>
+      </div>
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -154,32 +155,33 @@ const RegisterAdmin = () => {
         </div>
       )}
 
-      <h3 className="sub-title">Administradores Cadastrados</h3>
-      <table className="admins-table">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          {admins.map((admin, index) => (
-            <tr key={index}>
-              <td>{admin.name}</td>
-              <td>{admin.email}</td>
-              <td>
-                <button
-                  className="btn-delete"
-                  onClick={() => handleDelete(admin._id)}
-                >
-                  Deletar
-                </button>
-              </td>
+      <div className="admins-table-div">
+        <table className="admins-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Ações</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {admins.map((admin, index) => (
+              <tr key={index}>
+                <td>{admin.name}</td>
+                <td>{admin.email}</td>
+                <td>
+                  <button
+                    className="btn-delete"
+                    onClick={() => handleDelete(admin._id)}
+                  >
+                    Deletar
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

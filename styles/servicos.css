@@ -178,7 +178,7 @@
     flex-direction: column;
     width: 350px;
     max-height: 600px;
-    overflow: auto;
+    padding: 20px;
   }
 
   .modal-img {
@@ -192,6 +192,7 @@
 
   .modal-description {
     font-size: 14px;
+    height: 200px;
   }
 
   .modal-contact {
