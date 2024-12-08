@@ -1,0 +1,133 @@
+.adote-page {
+  margin: 10px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.como-adotar-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.como-adotar {
+  display: flex;
+  flex-direction: column;
+}
+.title-adotar {
+  font-size: 50px;
+  font-weight: 600;
+}
+.amigo-nao-se-compra {
+  font-weight: 600;
+  color: #ffb900;
+  font-size: 25px;
+}
+.como-adotar-texts {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+}
+.como-adotar-image {
+}
+.animals-card-button-adotar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.animais-cards-conteiner {
+}
+.animal-div {
+}
+.animal-card-button {
+}
+.animal-card-image {
+}
+.line-divisor {
+  height: 1px;
+  background-color: black;
+  margin: 30px 0px;
+  width: 100%;
+}
+.adote-agendar-visita-container h3 {
+  font-size: 30px;
+}
+.adote-facebook-instagram-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+a.facebook-button,
+a.instagram-button {
+  width: 200px;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.facebook-button {
+  background-color: #25aba7;
+}
+.instagram-button {
+  background-color: #ffb900;
+}
+.adote-exeigencias {
+}
+.exig-list {
+}
+.cats-info-exig {
+  margin-top: 10px;
+  font-weight: 600;
+}
+.location-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+.location-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  justify-content: center;
+}
+.endereco {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.location-map {
+  display: flex;
+  justify-content: center;
+}
+
+.responsive-map {
+  width: 500px;
+  height: 350px;
+}
+
+@media screen and (max-width: 768px) {
+  .adote-page {
+    margin: 0px 20px;
+  }
+  .como-adotar-section {
+    flex-direction: column;
+  }
+  .location-container {
+    flex-direction: column;
+  }
+  .responsive-map {
+    width: 370px;
+    height: 250px;
+  }
+  .location-info {
+    margin-bottom: 30px;
+  }
+
+  .title-adotar {
+    font-size: 40px;
+  }
+}
