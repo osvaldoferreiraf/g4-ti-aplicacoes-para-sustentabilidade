@@ -1,57 +1,57 @@
 .painel-container {
-  display: flex;
-  height: 100vh;
-}
-
-.menu-lateral {
-  width: 250px;
-  background-color: #25ABA7;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  gap: 10px;
-  margin: 20px;
-  border-radius: 12px;
-}
-
-.menu-lateral ul {
-  list-style: none;
-  padding: 0;
-}
-
-.menu-lateral li {
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 10px;
-  transition: background 0.3s ease;
-}
-
-.menu-lateral li:hover {
-  background-color: #FFB900;
-}
-
-.painel-conteudo {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: #ecf0f1;
-  margin: 20px 20px 20px 0px;
-  border-radius: 12px;
-}
-
-
-@media screen and (max-width: 768px) {
-  .painel-container {
-    flex-direction: column;
-    height: 100%;
-  }
-  .menu-lateral {
-    width: 90%;
     display: flex;
-
+    height: 100vh;
   }
+  
+  .menu-lateral {
+    width: 250px;
+    background-color: #25ABA7;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    margin: 20px;
+    border-radius: 12px;
+  }
+  
+  .menu-lateral ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-lateral li {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .menu-lateral li:hover {
+    background-color: #FFB900;
+  }
+  
   .painel-conteudo {
-    margin: 20px 20px 50px 20px;
-
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+    margin: 20px 20px 20px 0px;
+    border-radius: 12px;
   }
-}
+  
+
+  @media screen and (max-width: 768px) {
+    .painel-container {
+      flex-direction: column;
+      height: 100%;
+    }
+    .menu-lateral {
+      width: 90%;
+      display: flex;
+
+    }
+    .painel-conteudo {
+      margin: 20px 20px 50px 20px;
+
+    }
+  }
